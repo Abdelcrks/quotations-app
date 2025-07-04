@@ -2,6 +2,7 @@ const form = document.getElementById("quote-form")
 console.log(form)
 
 
+let quoteCount = Number(0)
 
 form.addEventListener("submit", (event) =>{
     event.preventDefault()
@@ -15,6 +16,9 @@ form.addEventListener("submit", (event) =>{
 
 
 const addQuote = (text,author) => {
+    quoteCount += 1
+    document.getElementById("count").innerText=quoteCount
+    
     const paragraphText= document.createElement("p")
         paragraphText.classList.add("text")
         paragraphText.innerText = text
